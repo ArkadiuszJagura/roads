@@ -27,7 +27,9 @@ public class UsersService implements UserDetailsService {
     public void addUser(User user) {
         user.setActive(true);
         encodeUserPassword(user);
-        setDefaultAuthority(user);
+        if (user.getAuthorities().isEmpty()) {
+            setDefaultAuthority(user);
+        }
         usersRepository.saveAndFlush(user);
     }
 

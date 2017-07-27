@@ -24,9 +24,20 @@ public class User implements Serializable, UserDetails {
     private String password;
     private boolean active;
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private Set<Authority> authorities = new HashSet<>();
+    private Set<Authority> authorities;
+
+    public User() {
+    }
+
+    public User(String login, String password) {
+        this.login = login;
+        this.password = password;
+    }
 
     public void addAuthority(Authority authority) {
+        if (authorities == null) {
+            authorities = new HashSet<>();
+        }
         authorities.add(authority);
     }
 
