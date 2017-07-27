@@ -13,11 +13,11 @@ export class SecurityService {
 
   user: Observable<User>
 
-  private authorizationHeader = 'Authorization'
-  private userKey = 'user'
-  private tokenKey = 'token'
-  private tokenType = 'bearer'
-  private userSubject = new BehaviorSubject<User>(null)
+  private authorizationHeader = 'Authorization';
+  private userKey = 'user';
+  private tokenKey = 'token';
+  private tokenType = 'bearer';
+  private userSubject = new BehaviorSubject<User>(null);
 
   constructor(private http: Http, private requestOptions: RequestOptions, private api: Api) {
     this.user = this.userSubject.asObservable()

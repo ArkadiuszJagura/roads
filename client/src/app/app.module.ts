@@ -20,8 +20,7 @@ import {routerModule} from './app.routing';
   ],
   providers: [
     Api,
-    SecurityService,
-    SecurityGuard
+    SecurityGuard,
   ],
   bootstrap: [AppComponent]
 })

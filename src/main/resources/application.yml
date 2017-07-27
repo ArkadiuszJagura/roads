@@ -1,8 +1,9 @@
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/training
-    username: lukaszandrzejewski
+    url: jdbc:postgresql://localhost:5432/bdot
+    username: postgres
+    password: u92
   jpa:
     hibernate:
       ddl-auto: update
@@ -20,8 +21,9 @@ spring:
   profiles: production
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/training
-    username: lukaszandrzejewski
+    url: jdbc:postgresql://localhost:5432/bdot
+    username: postgres
+    password: u92
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
